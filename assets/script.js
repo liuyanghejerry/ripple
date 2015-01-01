@@ -14,13 +14,11 @@
         next();
       });
     });
-    $(items[items.length-1]).addClass('active').show();
+    $(items[items.length-1]).addClass('active');
     function next() {
       var active = items.siblings('.active');
-      active.prev().show().addClass('active');
-      active.fadeOut(800, function(){
-        active.removeClass('active').prependTo(active.parent());
-      });
+      active.prev().addClass('active');
+      active.removeClass('active').prependTo(active.parent())
     }
   }
 })();
