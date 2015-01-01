@@ -7,8 +7,8 @@
     var items = $('.background-slider .background').each(function(index, item) {
       var item = $(item);
       var imgUrl = item.data('background');
-      imgUrl = "url('"+imgUrl+"') center center no-repeat";
-      item.css('background', imgUrl);
+      imgUrl = "url("+imgUrl+")";
+      item.css('background-image', imgUrl);
       item.on('click', function(){
         console.log('click', index);
         next();

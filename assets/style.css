@@ -16,6 +16,8 @@ html, body {
   visibility: hidden;
   opacity: 0;
   transition: all .8s;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .background-slider .background:nth-last-of-type(1) {
   visibility: visible;
