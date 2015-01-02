@@ -9,6 +9,7 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 .background-slider .background {
   width: 100%;
@@ -18,8 +19,9 @@ body {
   left: 0;
   opacity: 0;
   transition: all .4s;
-  background-position: center center;
+  background-position: top left;
   background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 .background-slider .background img {
   display: none;
@@ -28,9 +30,10 @@ body {
   opacity: 1;
 }
 
-.header {
+.content-container {
   position: absolute;
   width: 100%;
+  height: 100%;
   min-height: 70px;
   z-index: 12;
 }
@@ -56,6 +59,21 @@ body {
 .header .right-logo {
   float: right;
   text-align: right;
+}
+.header .nav,
+.header .nav li {
+  list-style: none;
+  margin-left: 40px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.header .nav li {
+  display: inline-block;
+}
+.header .nav li a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
 }
 
 .main-content {
@@ -86,4 +104,27 @@ body {
 }
 .main-content .main-link.ie-fix:hover {
   color: #ccc\9;
+}
+
+.story-container {
+  margin-left: 130px;
+  color: #fff;
+  padding-top: 20px;
+}
+.story-container h2 {
+  margin: 40px 0 0 0;
+  font-size: 36px;
+  font-weight: normal;
+}
+.story-container p {
+  max-width: 600px;
+}
+.story-container .bold-title {
+  margin: 0;
+  font-family: 'Calibri Bold';
+}
+.story-container .bold-title a {
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: underline;
 }
