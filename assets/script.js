@@ -1,24 +1,36 @@
 (function() {
   $(document).ready(function(){
-    attachBackground();
+    var f = attachBackground();
+    attachLink(f.setBackground, f.clearBackground);
   });
 
   function attachBackground() {
-    var items = $('.background-slider .background').each(function(index, item) {
-      var item = $(item);
-      var imgUrl = item.data('background');
-      imgUrl = "url("+imgUrl+")";
-      item.css('background-image', imgUrl);
-      item.on('click', function(){
-        console.log('click', index);
-        next();
-      });
-    });
-    $(items[items.length-1]).addClass('active');
-    function next() {
-      var active = items.siblings('.active');
-      active.prev().addClass('active');
-      active.removeClass('active').prependTo(active.parent())
+    var background = $('.background-slider .background').first();
+    var images = background.data('background').split(',');
+    
+    function setBackground(index) {
+      var url = images[index];
+      var imgUrl = "url("+url+")";
+      background.removeClass('active');
+      background.css('background-image', imgUrl);
+      background.addClass('active');
     }
+
+    function clearBackground() {
+      background.removeClass('active');
+    }
+
+    setBackground(0);
+
+    return {setBackground: setBackground, clearBackground: clearBackground};
   }
+
+  function attachLink(setBackground, clearBackground) {
+    var links = $('.main-content .main-link');
+    links.each(function(index, link) {
+      link = $(link);
+      link.hover(function(){setBackground(index)});
+    });
+  }
+
 })();

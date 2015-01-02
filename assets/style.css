@@ -2,6 +2,9 @@ html, body {
   width: 100%;
   height: 100%;
 }
+body {
+  font-family: Calibri;
+}
 .background-slider {
   width: 100%;
   height: 100%;
@@ -13,13 +16,71 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  visibility: hidden;
   opacity: 0;
-  transition: all .8s;
+  transition: all .4s;
   background-position: center center;
   background-repeat: no-repeat;
 }
-.background-slider .background:nth-last-of-type(1) {
-  visibility: visible;
+.background-slider .background.active {
   opacity: 1;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  min-height: 70px;
+  z-index: 12;
+}
+.header .header-wrapper {
+  width: 100%;
+  min-height: 64px;
+  box-sizing: border-box;
+  padding: 10px 20px 0 20px;
+  color: #fff;
+  border-bottom: 2px solid;
+}
+.header .logo {
+  display: inline-block;
+  line-height: 50px;
+}
+.header .logo img {
+  vertical-align: middle;
+}
+.header .left-logo {
+  float: left;
+  text-align: left;
+}
+.header .right-logo {
+  float: right;
+  text-align: right;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  /*font-size: 0;*/
+  display: table;
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+}
+.main-content .content-wrapper {
+  display:table-cell;
+  vertical-align:middle;
+  width:100%;
+  height:100%;
+  font-size: 36px;
+}
+.main-content .main-link {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: all .4s;
+}
+.main-content .main-link:hover {
+  color: transparent;
+  text-shadow: 0 0 3px rgba(255,255,255,0.8);
+}
+.main-content .main-link.ie-fix:hover {
+  color: #fff\9;
 }
