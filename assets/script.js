@@ -6,7 +6,7 @@
 
   function attachBackground() {
     var background = $('.background-slider .background').first();
-    var images = background.data('background').split(',');
+    var images = $('.background-slider .background img').map(function(index,item){return $(item).prop('src')})
     
     function setBackground(index) {
       var url = images[index];

@@ -21,6 +21,9 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
+.background-slider .background img {
+  display: none;
+}
 .background-slider .background.active {
   opacity: 1;
 }
@@ -75,6 +78,7 @@ body {
   margin: 0 20px;
   text-decoration: none;
   color: #fff;
+  font-weight:100;
   transition: all .4s;
 }
 .main-content .main-link:hover {
@@ -82,5 +86,5 @@ body {
   text-shadow: 0 0 3px rgba(255,255,255,0.8);
 }
 .main-content .main-link.ie-fix:hover {
-  color: #fff\9;
+  color: #ccc\9;
 }
