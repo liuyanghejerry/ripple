@@ -8,10 +8,7 @@
     var background = $('.background-slider .background').first();
     var images = $('.background-slider .background img').map(function(index,item){return $(item).prop('src')});
 
-    $(window).resize(function() {
-      resize();
-      console.log(background.css('background-size'));
-    });
+    $(window).resize(resize);
 
     function resize() {
       var realImages = $('.background-slider .background img');
@@ -21,18 +18,19 @@
       var imageHeight = realImage.height();
       var windowWidth = $(window).width();
       var windowHeight = $(window).height();
-      var maxWidth = Math.max(imageWidth, windowWidth);
-      var maxHeight = Math.max(imageHeight, windowHeight);
 
-      var ratio = imageHeight / imageWidth;
-      var isImageHeightLargeThanWidth = ratio > 1;
-      var isWindowHeightLargeThanWidth = windowHeight > windowWidth;
-      var length = isWindowHeightLargeThanWidth ? windowWidth : windowHeight;
+      var imageRatio = imageHeight / imageWidth;
+      var windowRatio = windowHeight / windowWidth;
 
-      var width = Math.max(isImageHeightLargeThanWidth ? length : length/ratio, windowWidth);
-      var height = Math.max(isImageHeightLargeThanWidth ? length*ratio : length, windowHeight);
+      if (windowRatio >= imageRatio) {
+        setSize(windowHeight/imageRatio, windowHeight);
+      } else {
+        setSize(windowWidth, imageRatio*windowWidth);
+      }
 
-      background.css('background-size', '' + (width) + 'px ' + (height) + 'px');
+      function setSize(width, height) {
+        background.css('background-size', '' + width + 'px ' + height + 'px');
+      }
     }
     
     function setBackground(index) {
@@ -43,7 +41,7 @@
       background.addClass('active');
       background.data('background', index);
       // console.log(background.data('background'));
-      resize();
+      // resize();
     }
 
     function clearBackground() {
@@ -51,6 +49,7 @@
     }
 
     setBackground(0);
+    resize();
 
     return {setBackground: setBackground, clearBackground: clearBackground};
   }
