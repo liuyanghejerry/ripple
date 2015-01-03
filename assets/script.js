@@ -16,16 +16,16 @@
 
       var imageWidth = realImage.width();
       var imageHeight = realImage.height();
-      var windowWidth = $(window).width();
-      var windowHeight = $(window).height();
+      var viewWidth = $(document).width();
+      var viewHeight = $(document).height();
 
       var imageRatio = imageHeight / imageWidth;
-      var windowRatio = windowHeight / windowWidth;
+      var windowRatio = viewHeight / viewWidth;
 
       if (windowRatio >= imageRatio) {
-        setSize(windowHeight/imageRatio, windowHeight);
+        setSize(viewHeight/imageRatio, viewHeight);
       } else {
-        setSize(windowWidth, imageRatio*windowWidth);
+        setSize(viewWidth, imageRatio*viewWidth);
       }
 
       function setSize(width, height) {
@@ -40,8 +40,6 @@
       background.css('background-image', imgUrl);
       background.addClass('active');
       background.data('background', index);
-      // console.log(background.data('background'));
-      // resize();
     }
 
     function clearBackground() {
