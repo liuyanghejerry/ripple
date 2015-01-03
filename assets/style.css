@@ -133,7 +133,6 @@ body {
 
 .story-container {
   margin-left: 130px;
-  padding-bottom: 80px;
   color: #fff;
   padding-top: 20px;
 }
@@ -154,6 +153,11 @@ body {
   color: #fff;
   font-weight: bolder;
   text-decoration: underline;
+}
+.content-container .footer {
+  margin: 0 4px 4px 0;
+  color: #fff;
+  text-align: right;
 }
 
 @media 

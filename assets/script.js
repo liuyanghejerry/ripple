@@ -35,7 +35,6 @@
       var cur = backgrounds.index(item);
       var next = (cur+1) % backgrounds.length;
       setBackground(next);
-      console.log(cur, next);
     }
 
     function previousBackground() {
@@ -43,7 +42,6 @@
       var cur = backgrounds.index(item);
       var previous = (cur+backgrounds.length-1) % backgrounds.length;
       setBackground(previous);
-      console.log(cur, previous);
     }
 
     setBackground(0);
