@@ -14,15 +14,30 @@
 body {
   font-family: 'Calibri-Light';
 }
-.index .background-slider {
-  display: none;
+.background-slider {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
 }
-html {
+
+.background-slider .background {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  transition: opacity .4s;
+  opacity: 0;
 }
+
+.background-slider .background.active {
+  opacity: 1;
+}
+
 .background-slider .background img {
   display: none;
 }

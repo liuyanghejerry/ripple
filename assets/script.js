@@ -5,28 +5,26 @@
   });
 
   function attachBackground() {
-    var background = $('.background-slider .background').first();
+    var body = $('body');
+    var backgrounds = $('.background-slider .background');
     var images = $('.background-slider .background img').map(function(index,item){return $(item).prop('src')});
-    
-    function setBackground(index) {
+
+    backgrounds.each(function(index, item) {
       var url = images[index];
       var imgUrl = "url("+url+")";
-
-      // background
-      $('html')
-      // .removeClass('active')
-      .css('background-image', imgUrl)
-      // .addClass('active')
-      .data('background', index);
-      
+      $(item).css('background-image', imgUrl);
+    });
+    
+    function setBackground(index) {
+      backgrounds.removeClass('active');
+      $(backgrounds[index]).addClass('active');
     }
 
     function clearBackground() {
-      background.removeClass('active');
+      backgrounds.removeClass('active');
     }
 
     setBackground(0);
-    // resize();
 
     return {setBackground: setBackground, clearBackground: clearBackground};
   }
