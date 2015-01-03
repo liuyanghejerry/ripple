@@ -36,10 +36,13 @@
     function setBackground(index) {
       var url = images[index];
       var imgUrl = "url("+url+")";
-      background.removeClass('active');
-      background.css('background-image', imgUrl);
-      background.addClass('active');
-      background.data('background', index);
+
+      background
+      .removeClass('active')
+      .css('background-image', imgUrl)
+      .addClass('active')
+      .data('background', index);
+      
     }
 
     function clearBackground() {
