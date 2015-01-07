@@ -91,6 +91,8 @@
         menu.find('.inner-content .sub-nav').append(subMenu);
         link.click(function(ev) {
           ev.preventDefault();
+          $('.header .nav .sub-nav>li>a').removeClass('selected');
+          $(this).addClass('selected');
           setProjectContents(data, main, sub);
         });
       });
@@ -105,7 +107,7 @@
       ev.preventDefault();
       var self = $(this);
       self.toggleClass('minimized');
-      self.parent().find('.project-description').slideToggle();
+      self.parent().find('.project-description .content').slideToggle();
     });
 
     $('.header .nav>li')
@@ -134,7 +136,7 @@
               attachBackground();
             });
             var menu = $('.header .nav .'+main);
-            menu.find('.project-description').css(value.box).text(value.description);
+            menu.find('.project-description').css(value.box).find('.content').text(value.description);
           }
         });
       }

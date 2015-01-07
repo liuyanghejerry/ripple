@@ -18,6 +18,15 @@
             "right": "auto",
             "bottom": "auto",
             "width": "505px"
+          },
+          "bonus": {
+            "box": {
+              "top": "auto",
+              "left": "auto",
+              "right": "auto",
+              "bottom": "auto",
+              "width": "505px"
+            }
           }
         },
         {

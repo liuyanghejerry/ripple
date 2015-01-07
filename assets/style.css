@@ -275,13 +275,42 @@ html.project .content-container .footer {
   position: absolute;
   width: 505px;
   margin: 0;
-  padding: 5px 15px;
   font-size: 1.5em;
-  display: none;
 }
-.project-description p {
+.project-description .content {
   margin: 0;
-  font-size: 1.5em;
+  padding: 5px 15px;
+}
+.extra-links {
+  margin-top: 10px;
+  position: absolute;
+}
+.project-bonus {
+  margin-top: 10px;
+  padding: 13px;
+}
+.project-bonus a,
+.project-pager a {
+  display: inline-block;
+  vertical-align: middle;
+}
+.project-pager a.disabled {
+  opacity: 0.4;
+}
+.project-bonus a img,
+.project-pager a img  {
+  vertical-align: middle;
+}
+.project-bonus .facebook {
+  margin-right: 10px;
+}
+.project-pager {
+  width: 300px;
+  margin-top: 10px;
+  padding-left: 50%;
+  padding-left: calc(50% + 13px);
+  position: absolute;
+  font-size: 0;
 }
 
 @media 
