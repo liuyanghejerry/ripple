@@ -12,9 +12,10 @@
     }
 
     if($('html.project').length) {
-      attachMenuLink();
+      // attachMenuLink();
       loadProjects().done(function(data) {
-        setProjectContents(data, 'identity', 'co&co');
+        attachMenuLink(data);
+        // setProjectContents(data, 'identity', 'co&co');
       }).fail(function(err) {
         console.log(err);
       });
@@ -77,27 +78,66 @@
     return $.getJSON("assets/project-contents.json", {});
   }
 
-  function attachMenuLink() {
-    $('.header .nav li > a')
+  function attachMenuLink(data) {
+    $.each(data.menus, function(i, object) {
+      var main = object.name;
+      var menu = $('.header .nav .'+main);
+      menu.find('a.blur-link').text(main);
+      menu.find('.sub-nav>li>a').remove();
+      $.each(object.menus, function(i, object) {
+        var sub = object.name;
+        var link = $('<a>').prop('href', '').addClass('glow-link upper').text(sub);
+        var subMenu = $('<li>').append(link);
+        menu.find('.inner-content .sub-nav').append(subMenu);
+        link.click(function(ev) {
+          ev.preventDefault();
+          setProjectContents(data, main, sub);
+        });
+      });
+      menu.find('a.blur-link').click(function(ev) {
+        ev.preventDefault();
+
+      });
+      setProjectContents(data, 'identity', 'co&co');
+    });
+
+    $('.header .nav .expand-button').click(function(ev) {
+      ev.preventDefault();
+      var self = $(this);
+      self.toggleClass('minimized');
+      self.parent().find('.project-description').slideToggle();
+    });
+
+    $('.header .nav>li')
     .hover(function(ev) {
-      $(this).parent().find('.inner-content').slideDown();
+      $(this).find('.inner-content').slideDown();
     }, function() {
-      $(this).parent().not('.selected').find('.inner-content').slideUp();
-    })
-    .click(function(ev) {
-      //
+      $(this).not('.selected').find('.inner-content').slideUp();
     });
   }
 
   function setProjectContents(data, main, sub) {
     $('.background-slider .background').remove();
-    data[main][sub].backgrounds.forEach(function(item) {
-      var img = $('<img>').prop('src', item);
-      var background = $('<div>').addClass('background');
-      background.append(img);
-      $('.background-slider').append(background);4
-      attachBackground();
+    var slider = $('.background-slider');
+
+    $.each(data.menus, function(i, value) {
+      console.log(value);
+      if(value.name === main) {
+        $.each(value.menus, function(i, value) {
+          console.log(value);
+          if(value.name === sub) {
+            $.each(value.backgrounds, function(i, item) {
+              var img = $('<img>').prop('src', item);
+              var background = $('<div>').addClass('background');
+              background.append(img);
+              slider.append(background);
+              attachBackground();
+            });
+            var menu = $('.header .nav .'+main);
+            menu.find('.project-description').css(value.box).text(value.description);
+          }
+        });
+      }
     });
   }
-
 })();

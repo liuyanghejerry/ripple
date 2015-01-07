@@ -174,6 +174,9 @@ html.project .content-container .footer {
   position: fixed;
 }
 
+.upper {
+  text-transform: uppercase;
+}
 .transparent-box {
   background: rgba(255, 255, 255, 0.3);
 }
@@ -242,6 +245,13 @@ html.project .content-container .footer {
   margin: 20px 0 10px 0;
   cursor: pointer;
 }
+.expand-button.minimized .vertical-bar {
+  height: 0;
+  top: 18px;
+}
+.expand-button.expanded .vertical-bar {
+  height: 26px;
+}
 .expand-button .vertical-bar {
   display: block;
   position: absolute;
@@ -267,6 +277,7 @@ html.project .content-container .footer {
   margin: 0;
   padding: 5px 15px;
   font-size: 1.5em;
+  display: none;
 }
 .project-description p {
   margin: 0;

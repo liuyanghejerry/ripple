@@ -1,28 +1,42 @@
 {
-	"identity" :{
-		"co&co": {
-			"backgrounds": [
-				"assets/projects/identity_coco/identity_COCO_1.jpg",
-				"assets/projects/identity_coco/identity_COCO_2.jpg",
-				"assets/projects/identity_coco/identity_COCO_3.jpg",
-				"assets/projects/identity_coco/identity_COCO_4.jpg"
-			],
-			"description": "The years of industrial and product experience equipped me with strong and fast design fundamentals. But I am more interested in working close with materials, being the maker and solving real problems. I look forward to opportunities that challenge my perception of design and also allow me to hide behind design.",
-			"box": {
-				"top": 0,
-				"left": 0,
-				"right": "auto",
-				"bottom": "auto",
-				"width": "505px"
-			}
-		},
-		"taetea": {
-			"backgrounds": [
-				"assets/projects/identity_TAETEA/IDENTITY_TAETEA_1.jpg",
-				"assets/projects/identity_TAETEA/IDENTITY_TAETEA_2.jpg",
-				"assets/projects/identity_TAETEA/IDENTITY_TAETEA_3.jpg"
-			],
-			"description": "Very short description."
-		}
-	}
+  "menus": [
+    {
+      "name": "identity",
+      "menus": [
+        {
+          "name": "co&co",
+          "backgrounds": [
+            "assets/projects/identity_coco/identity_COCO_1.jpg",
+            "assets/projects/identity_coco/identity_COCO_2.jpg",
+            "assets/projects/identity_coco/identity_COCO_3.jpg",
+            "assets/projects/identity_coco/identity_COCO_4.jpg"
+          ],
+          "description": "The years of industrial and product experience equipped me with strong and fast design fundamentals. But I am more interested in working close with materials, being the maker and solving real problems. I look forward to opportunities that challenge my perception of design and also allow me to hide behind design.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "505px"
+          }
+        },
+        {
+          "name": "taetea",
+          "backgrounds": [
+            "assets/projects/identity_TAETEA/IDENTITY_TAETEA_1.jpg",
+            "assets/projects/identity_TAETEA/IDENTITY_TAETEA_2.jpg",
+            "assets/projects/identity_TAETEA/IDENTITY_TAETEA_3.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "505px"
+          }
+        }
+      ]
+    }
+  ]
 }
