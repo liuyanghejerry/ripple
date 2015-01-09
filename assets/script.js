@@ -134,6 +134,8 @@
           $('.header .nav .sub-nav>li>a').removeClass('selected');
           $(this).addClass('selected');
           activeProjectContents(data, main, sub, backgroundController);
+          $('.header .nav>li').removeClass('selected');
+          $(this).parent().parents('li').addClass('selected');
         });
         setPager(data, main, sub, backgroundController);
       });
