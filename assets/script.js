@@ -23,7 +23,7 @@
 
   function attachBackground(subject) {
     if (subject) {
-      subject = subject.replace(/[& ]/, '-');
+      subject = subject.replace(/[& \.]/, '-');
     }
     var backgrounds = !subject ? 
       $('.background-slider .background') : 
@@ -48,7 +48,7 @@
 
     function nextBackground(subject) {
       if (subject) {
-        subject = subject.replace(/[& ]/, '-');
+        subject = subject.replace(/[& \.]/, '-');
       }
       var item = !subject ? 
         $('.background-slider .background.active') :
@@ -61,7 +61,7 @@
 
     function previousBackground(subject) {
       if (subject) {
-        subject = subject.replace(/[& ]/, '-');
+        subject = subject.replace(/[& \.]/, '-');
       }
       var item = !subject ? 
         $('.background-slider .background.active') :
@@ -72,7 +72,7 @@
       return previous;
     }
     function activeSubject(subject) {
-      subject = subject.replace(/[& ]/, '-');
+      subject = subject.replace(/[& \.]/, '-');
       var backgrounds = $('.background-slider.'+subject+' .background');
       $('.background-slider .background').removeClass('active');
       backgrounds.first().addClass('active');
@@ -104,7 +104,7 @@
 
   function attachMenuLink(data) {
     function prepareBackgrounds(backgrounds, name) {
-      name = name.replace(/[& ]/, '-');
+      name = name.replace(/[& \.]/, '-');
       var backgroundDivs = $.map(backgrounds, function(item) {
         var img = $('<img>').prop('src', item);
         var background = $('<div>').addClass('background');
@@ -145,6 +145,9 @@
         $(this).parent().addClass('selected');
         $(this).parent().find('.sub-nav>li>a').first().click();
       });
+      if (object.extralinks) {
+        menu.find('.extra-links').css(object.extralinks);
+      }
     });
 
     $('.header .nav .expand-button').click(function(ev) {
@@ -163,7 +166,7 @@
   }
 
   function setPager(data, main, sub, backgroundController) {
-    sub = sub.replace(/[& ]/, '-');
+    sub = sub.replace(/[& \.]/, '-');
     $.each(data.menus, function(i, value) {
       if(value.name === main) {
         var menu = $('.header .nav .'+main);
@@ -220,7 +223,7 @@
             menu.find('.project-description').css(value.box).find('.content').text(value.description);
           }
         });
-        sub = sub.replace(/[& ]/, '-');
+        sub = sub.replace(/[& \.]/, '-');
         $('body').removeClass();
         $('body').addClass(sub);
         backgroundController.activeSubject(sub);

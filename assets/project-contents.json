@@ -18,15 +18,6 @@
             "right": "auto",
             "bottom": "auto",
             "width": "505px"
-          },
-          "bonus": {
-            "box": {
-              "top": "auto",
-              "left": "auto",
-              "right": "auto",
-              "bottom": "auto",
-              "width": "505px"
-            }
           }
         },
         {
@@ -65,15 +56,6 @@
             "right": "auto",
             "bottom": "auto",
             "width": "385px"
-          },
-          "bonus": {
-            "box": {
-              "top": "auto",
-              "left": "auto",
-              "right": "auto",
-              "bottom": "auto",
-              "width": "505px"
-            }
           }
         },
         {
@@ -173,6 +155,90 @@
           }
         }
       ]
+    },
+    {
+      "name": "solution",
+      "menus": [
+        {
+          "name": "BRUISE",
+          "backgrounds": [
+            "assets/projects/SOLUTION_BRUISE/SOLUTION_BRUISE_1.jpg",
+            "assets/projects/SOLUTION_BRUISE/SOLUTION_BRUISE_2.jpg",
+            "assets/projects/SOLUTION_BRUISE/SOLUTION_BRUISE_3.jpg",
+            "assets/projects/SOLUTION_BRUISE/SOLUTION_BRUISE_4.jpg"
+          ],
+          "description": "abcdefg.",
+          "box": {
+            "top": "auto",
+            "left": "-212px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "341px"
+          }
+        },
+        {
+          "name": "ANYWHERE.fm",
+          "backgrounds": [
+            "assets/projects/SOLUTION_ANYWHEREFM/SOUTION_ANYWHEREFM.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "-212px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "341px"
+          }
+        },
+        {
+          "name": "BEACON",
+          "backgrounds": [
+            "assets/projects/SOLUTION_BEACON/SOLUTION_BEACON.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "-212px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "341px"
+          }
+        },
+        {
+          "name": "EEMRAA",
+          "backgrounds": [
+            "assets/projects/SOLUTION_EEMRAA/SOLUTION_EEMRAA_1.jpg",
+            "assets/projects/SOLUTION_EEMRAA/SOLUTION_EEMRAA_2.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "-212px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "341px"
+          }
+        },
+        {
+          "name": "FLOOR.E",
+          "backgrounds": [
+            "assets/projects/SOLUTION_FLOORE/SOLUTION_FLOORE_1.jpg",
+            "assets/projects/SOLUTION_FLOORE/SOLUTION_FLOORE_2.jpg",
+            "assets/projects/SOLUTION_FLOORE/SOLUTION_FLOORE_3.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "-212px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "341px"
+          }
+        }
+      ],
+      "extralinks": {
+        "margin-left": "238px"
+      }
     }
   ]
 }

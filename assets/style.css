@@ -245,6 +245,9 @@ html.project .content-container .footer {
   margin: 20px 0 10px 0;
   cursor: pointer;
 }
+.expand-button.right {
+  margin-left: calc(100% - 30px);
+}
 .expand-button.minimized .vertical-bar {
   height: 0;
   top: 14px;
