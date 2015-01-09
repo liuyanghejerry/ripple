@@ -46,6 +46,133 @@
           }
         }
       ]
+    },
+    {
+      "name": "design",
+      "menus": [
+        {
+          "name": "foamy wood",
+          "backgrounds": [
+            "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_NO123.jpg",
+            "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_NO123.jpg",
+            "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_NO3.jpg",
+            "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_SIT.jpg"
+          ],
+          "description": "abcdefg.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          },
+          "bonus": {
+            "box": {
+              "top": "auto",
+              "left": "auto",
+              "right": "auto",
+              "bottom": "auto",
+              "width": "505px"
+            }
+          }
+        },
+        {
+          "name": "wane",
+          "backgrounds": [
+            "assets/projects/DESIGN_WANE/DESIGN_WANE_DIMENSION.jpg",
+            "assets/projects/DESIGN_WANE/DESIGN_WANE_STACK.jpg",
+            "assets/projects/DESIGN_WANE/DESIGN_WANE_1.jpg",
+            "assets/projects/DESIGN_WANE/DESIGN_WANE_BIGSMALL.jpg",
+            "assets/projects/DESIGN_WANE/DESIGN_WANE_COVER.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        },
+        {
+          "name": "a clock",
+          "backgrounds": [
+            "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_1.jpg",
+            "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_2.jpg",
+            "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_3.jpg",
+            "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_4.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        },
+        {
+          "name": "a lamp",
+          "backgrounds": [
+            "assets/projects/DESIGN_A_LAMP/DESIGN_A_LAMP_1.jpg",
+            "assets/projects/DESIGN_A_LAMP/DESIGN_A_LAMP_2.jpg",
+            "assets/projects/DESIGN_A_LAMP/DESIGN_LAMP_1.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        },
+        {
+          "name": "a radio",
+          "backgrounds": [
+            "assets/projects/DESIGN_A_RADIO/DESIGN_RADIO_1.jpg",
+            "assets/projects/DESIGN_A_RADIO/DESIGN_RADIO_2.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        },
+        {
+          "name": "speakers",
+          "backgrounds": [
+            "assets/projects/DESIGN_SPEAKERS/DESIGN_SPEAKERS_1.jpg",
+            "assets/projects/DESIGN_SPEAKERS/DESIGN_SPEAKERS_2.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        },
+        {
+          "name": "ivory",
+          "backgrounds": [
+            "assets/projects/DESIGN_IVORY/DESIGN_IVORY_1.jpg",
+            "assets/projects/DESIGN_IVORY/DESIGN_IVORY_2.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "auto",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "385px"
+          }
+        }
+      ]
     }
   ]
 }
