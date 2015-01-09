@@ -288,6 +288,7 @@ html.project .content-container .footer {
 .project-bonus {
   margin-top: 10px;
   padding: 13px;
+  position: relative;
 }
 .project-bonus a,
 .project-pager a {
@@ -305,11 +306,10 @@ html.project .content-container .footer {
   margin-right: 10px;
 }
 .project-pager {
-  width: 300px;
-  margin-top: 10px;
-  padding-left: 50%;
-  padding-left: calc(50% + 13px);
   position: absolute;
+  right: -51px;
+  top: 110px;
+  top: calc(75px + 13px * 2 + 20px);
   font-size: 0;
 }
 
