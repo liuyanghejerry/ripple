@@ -15,12 +15,39 @@
       loadProjects().done(function(data) {
         buildMenu(data);
         bindExpandButton();
-        toggleMenu(data, 'identity');
+        // toggleMenu(data, 'identity');
+        jumpHash(data);
+        $(window).on('hashchange', function() {
+          jumpHash(data);
+        });
       }).fail(function(err) {
         console.log(err);
       });
     }
   });
+
+  function jumpHash(data) {
+    var routes = location.hash.split('#').slice(1);
+
+    var main = null;
+    var sub = null;
+
+    if(routes.length) {
+      main = routes[0];
+    } 
+    if(routes.length-1 > 0) {
+      sub = routes[1];
+    }
+
+    if(!main) {
+      main = 'identity';
+    }
+
+    var body = $('body');
+    if(!body.hasClass(main) && !body.hasClass(sub)) {
+      toggleMenu(data, main, sub);
+    }
+  }
 
   function attachBackground(subject) {
     if (subject) {
@@ -171,6 +198,7 @@
     toggleProjectContent(data, main, sub);
     // slide up all other expanded menu
     $('.header .nav>li').not('.selected').find('.inner-content').slideUp();
+    location.hash = '#' + main + '#' + sub;
   }
 
   function activeBackground(sub) {
@@ -191,7 +219,7 @@
         });
         sub = pureClassName(sub);
         $('body').removeClass();
-        $('body').addClass(sub);
+        $('body').addClass(sub).addClass(main);
         resetPager(main, sub);
       }
     });

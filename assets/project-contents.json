@@ -1,10 +1,10 @@
 {
   "menus": [
     {
-      "name": "identity",
+      "name": "IDENTITY",
       "menus": [
         {
-          "name": "co&co",
+          "name": "CO&CO",
           "backgrounds": [
             "assets/projects/identity_coco/identity_COCO_1.jpg",
             "assets/projects/identity_coco/identity_COCO_2.jpg",
@@ -21,7 +21,7 @@
           }
         },
         {
-          "name": "taetea",
+          "name": "TAETEA",
           "backgrounds": [
             "assets/projects/identity_TAETEA/IDENTITY_TAETEA_1.jpg",
             "assets/projects/identity_TAETEA/IDENTITY_TAETEA_2.jpg",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "name": "design",
+      "name": "DESIGN",
       "menus": [
         {
-          "name": "foamy wood",
+          "name": "FOAMY WOOD",
           "backgrounds": [
             "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_NO123.jpg",
             "assets/projects/DESIGN_FOAMY_WOOD/DESIGN_FOAMYWOOD_NO123_NO.jpg",
@@ -59,7 +59,7 @@
           }
         },
         {
-          "name": "wane",
+          "name": "WANE",
           "backgrounds": [
             "assets/projects/DESIGN_WANE/DESIGN_WANE_DIMENSION.jpg",
             "assets/projects/DESIGN_WANE/DESIGN_WANE_STACK.jpg",
@@ -77,7 +77,7 @@
           }
         },
         {
-          "name": "a clock",
+          "name": "A CLOCK",
           "backgrounds": [
             "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_1.jpg",
             "assets/projects/DESIGN_A_CLOCK/DESIGN_CLOCK_2.jpg",
@@ -94,7 +94,7 @@
           }
         },
         {
-          "name": "a lamp",
+          "name": "A LAMP",
           "backgrounds": [
             "assets/projects/DESIGN_A_LAMP/DESIGN_A_LAMP_1.jpg",
             "assets/projects/DESIGN_A_LAMP/DESIGN_A_LAMP_2.jpg",
@@ -110,7 +110,7 @@
           }
         },
         {
-          "name": "a radio",
+          "name": "A RADIO",
           "backgrounds": [
             "assets/projects/DESIGN_A_RADIO/DESIGN_RADIO_1.jpg",
             "assets/projects/DESIGN_A_RADIO/DESIGN_RADIO_2.jpg"
@@ -125,7 +125,7 @@
           }
         },
         {
-          "name": "speakers",
+          "name": "SPEAKERS",
           "backgrounds": [
             "assets/projects/DESIGN_SPEAKERS/DESIGN_SPEAKERS_1.jpg",
             "assets/projects/DESIGN_SPEAKERS/DESIGN_SPEAKERS_2.jpg"
@@ -140,7 +140,7 @@
           }
         },
         {
-          "name": "ivory",
+          "name": "IVORY",
           "backgrounds": [
             "assets/projects/DESIGN_IVORY/DESIGN_IVORY_1.jpg",
             "assets/projects/DESIGN_IVORY/DESIGN_IVORY_2.jpg"
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "name": "solution",
+      "name": "SOLUTION",
       "menus": [
         {
           "name": "BRUISE",
@@ -177,7 +177,7 @@
           }
         },
         {
-          "name": "ANYWHERE.fm",
+          "name": "ANYWHERE.FM",
           "backgrounds": [
             "assets/projects/SOLUTION_ANYWHEREFM/SOUTION_ANYWHEREFM.jpg"
           ],
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "name": "research",
+      "name": "RESEARCH",
       "menus": [
         {
           "name": "HARD DIRVE EXPERIMENT",
