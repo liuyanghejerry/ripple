@@ -9,13 +9,17 @@
     if($('html.info').length) {
       var f = attachBackground();
       setInterval(function(){f.nextBackground();}, 5000);
+      loadProjects().done(function(data) {
+        buildSimpleMenu(data);
+      }).fail(function(err) {
+        console.log(err);
+      });
     }
 
     if($('html.project').length) {
       loadProjects().done(function(data) {
         buildMenu(data);
         bindExpandButton();
-        // toggleMenu(data, 'identity');
         jumpHash(data);
         $(window).on('hashchange', function() {
           jumpHash(data);
@@ -40,7 +44,7 @@
     }
 
     if(!main) {
-      main = 'identity';
+      main = 'IDENTITY';
     }
 
     var body = $('body');
@@ -149,6 +153,32 @@
     return attachBackground(sub);
   }
 
+  function buildSimpleMenu(data) {
+    $.each(data.menus, function(i, object) {
+      var main = object.name;
+      var menu = $('.header .nav .'+main);
+      menu.find('a.blur-link').text(main);
+      menu.find('.sub-nav>li>a').remove();
+      $.each(object.menus, function(i, object) {
+        var sub = object.name;
+        var link = $('<a>').prop('href', 'project.html#'+pureClassName(main)+'#'+pureClassName(sub)).addClass('glow-link upper').text(sub);
+        var subMenu = $('<li>').addClass(pureClassName(sub)).append(link);
+        menu.find('.inner-content .sub-nav').append(subMenu);
+      });
+      // menu.find('a.blur-link').click(function(ev) {
+      //   ev.preventDefault();
+      //   // toggleMenu(data, main);
+      // });
+    });
+
+    $('.header .nav>li')
+    .hover(function(ev) {
+      $(this).find('.inner-content').slideDown();
+    }, function() {
+      $(this).not('.selected').find('.inner-content').slideUp();
+    });
+  }
+  
   function buildMenu(data) {
     $.each(data.menus, function(i, object) {
       var main = object.name;
@@ -160,11 +190,11 @@
         var link = $('<a>').prop('href', '').addClass('glow-link upper').text(sub);
         var subMenu = $('<li>').addClass(pureClassName(sub)).append(link);
         menu.find('.inner-content .sub-nav').append(subMenu);
-        var backgroundController = buildBackgrounds(object.backgrounds, sub);
         link.click(function(ev) {
           ev.preventDefault();
           toggleMenu(data, main, sub);
         });
+        var backgroundController = buildBackgrounds(object.backgrounds, sub);
         setPager(data, main, sub, backgroundController);
       });
       menu.find('a.blur-link').click(function(ev) {

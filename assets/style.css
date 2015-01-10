@@ -64,6 +64,9 @@ html.index .content-container {
   display: inline-block;
   line-height: 28px;
 }
+.header .logo a {
+  display: inline-block;
+}
 .header .logo img {
   vertical-align: middle;
 }
@@ -82,9 +85,11 @@ html.index .content-container {
   margin-bottom: 0;
   padding: 0;
   position: relative;
+  pointer-events: none;
 }
 .header .nav li {
   display: inline-block;
+  pointer-events: all;
 }
 .header .nav li a {
   font-size: 1.5em;
