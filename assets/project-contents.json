@@ -55,7 +55,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -73,7 +73,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -90,7 +90,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -106,7 +106,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -121,7 +121,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -136,7 +136,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         },
         {
@@ -151,7 +151,7 @@
             "left": "auto",
             "right": "auto",
             "bottom": "auto",
-            "width": "385px"
+            "width": "256px"
           }
         }
       ]
@@ -233,6 +233,45 @@
             "right": "auto",
             "bottom": "auto",
             "width": "341px"
+          }
+        }
+      ]
+    },
+    {
+      "name": "research",
+      "menus": [
+        {
+          "name": "HARD DIRVE EXPERIMENT",
+          "backgrounds": [
+            "assets/projects/RESEARCH_HARDDRIVE/RESEARCH_HARD_DRIVE_USB.jpg",
+            "assets/projects/RESEARCH_HARDDRIVE/RESEARCH_HARD_DRIVE_WAX.jpg",
+            "assets/projects/RESEARCH_HARDDRIVE/RESEARCH_HARD_DRIVE_WAX_2.jpg",
+            "assets/projects/RESEARCH_HARDDRIVE/RESEARCH_HARD_DRIVE_FERROFLUID.jpg"
+          ],
+          "description": "abcdefg.",
+          "box": {
+            "top": "auto",
+            "left": "-306px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "419px"
+          }
+        },
+        {
+          "name": "CUESCAPE",
+          "backgrounds": [
+            "assets/projects/RESEARCH_CUESCAPE/RESEARCH_CUESCAPE_MAP_1.jpg",
+            "assets/projects/RESEARCH_CUESCAPE/RESEARCH_CUESCAPE_MAP_1_COPY.jpg",
+            "assets/projects/RESEARCH_CUESCAPE/RESEARCH_CUESCAPE_MAP_2.jpg",
+            "assets/projects/RESEARCH_CUESCAPE/RESEARCH_CUESCAPE_MAP_2_COPY.jpg"
+          ],
+          "description": "Very short description.",
+          "box": {
+            "top": "auto",
+            "left": "-306px",
+            "right": "auto",
+            "bottom": "auto",
+            "width": "419px"
           }
         }
       ]

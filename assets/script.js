@@ -104,7 +104,7 @@
   }
 
   function pureClassName(name) {
-    return name.replace(/[& \.]/, '-');
+    return name.replace(/[& \.]/gi, '-');
   }
 
   function buildBackgrounds(backgrounds, sub) {
