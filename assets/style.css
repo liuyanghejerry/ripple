@@ -221,7 +221,7 @@ html.project .content-container .footer {
   text-shadow: 0 0 3px rgba(255,255,255,0.8),
                 1px 0 20px rgba(255,255,255,0.6);
 }
-.glow-link.selected {
+.selected > .glow-link {
   color: rgba(255,255,255,0.2);
   text-shadow: 0 0 3px rgba(255,255,255,0.8),
                 1px 0 20px rgba(255,255,255,0.6);
@@ -284,6 +284,9 @@ html.project .content-container .footer {
 .extra-links {
   margin-top: 10px;
   position: absolute;
+}
+.extra-links.right {
+  right: 0;
 }
 .project-bonus {
   margin-top: 10px;

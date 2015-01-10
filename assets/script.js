@@ -13,8 +13,9 @@
 
     if($('html.project').length) {
       loadProjects().done(function(data) {
-        attachMenuLink(data);
-        $('.nav>li>a').click();
+        buildMenu(data);
+        bindExpandButton();
+        toggleMenu(data, 'identity');
       }).fail(function(err) {
         console.log(err);
       });
@@ -102,22 +103,26 @@
     return $.getJSON("assets/project-contents.json", {});
   }
 
-  function attachMenuLink(data) {
-    function prepareBackgrounds(backgrounds, name) {
-      name = name.replace(/[& \.]/, '-');
-      var backgroundDivs = $.map(backgrounds, function(item) {
-        var img = $('<img>').prop('src', item);
-        var background = $('<div>').addClass('background');
-        return background.append(img);
-      });
-      var slider = $('<div>')
-                  .addClass('background-slider')
-                  .addClass(name)
-                  .append(backgroundDivs);
-      $('.content-container').before(slider);
-      return attachBackground(name);
-    }
+  function pureClassName(name) {
+    return name.replace(/[& \.]/, '-');
+  }
 
+  function buildBackgrounds(backgrounds, sub) {
+    sub = pureClassName(sub);
+    var backgroundDivs = $.map(backgrounds, function(item) {
+      var img = $('<img>').prop('src', item);
+      var background = $('<div>').addClass('background');
+      return background.append(img);
+    });
+    var slider = $('<div>')
+                .addClass('background-slider')
+                .addClass(sub)
+                .append(backgroundDivs);
+    $('.content-container').before(slider);
+    return attachBackground(sub);
+  }
+
+  function buildMenu(data) {
     $.each(data.menus, function(i, object) {
       var main = object.name;
       var menu = $('.header .nav .'+main);
@@ -126,35 +131,19 @@
       $.each(object.menus, function(i, object) {
         var sub = object.name;
         var link = $('<a>').prop('href', '').addClass('glow-link upper').text(sub);
-        var subMenu = $('<li>').append(link);
+        var subMenu = $('<li>').addClass(pureClassName(sub)).append(link);
         menu.find('.inner-content .sub-nav').append(subMenu);
-        var backgroundController = prepareBackgrounds(object.backgrounds, sub);
+        var backgroundController = buildBackgrounds(object.backgrounds, sub);
         link.click(function(ev) {
           ev.preventDefault();
-          $('.header .nav .sub-nav>li>a').removeClass('selected');
-          $(this).addClass('selected');
-          activeProjectContents(data, main, sub, backgroundController);
-          $('.header .nav>li').removeClass('selected');
-          $(this).parent().parents('li').addClass('selected');
+          toggleMenu(data, main, sub);
         });
         setPager(data, main, sub, backgroundController);
       });
       menu.find('a.blur-link').click(function(ev) {
         ev.preventDefault();
-        menu.parent().find('li').removeClass('selected');
-        $(this).parent().addClass('selected');
-        $(this).parent().find('.sub-nav>li>a').first().click();
+        toggleMenu(data, main);
       });
-      if (object.extralinks) {
-        menu.find('.extra-links').css(object.extralinks);
-      }
-    });
-
-    $('.header .nav .expand-button').click(function(ev) {
-      ev.preventDefault();
-      var self = $(this);
-      self.toggleClass('minimized');
-      self.parent().find('.project-description .content').slideToggle();
     });
 
     $('.header .nav>li')
@@ -165,8 +154,51 @@
     });
   }
 
+  function toggleMenu(data, main, sub) {
+    var menu = $('ul.nav li.'+main);
+    menu.siblings('li').removeClass('selected');
+    menu.addClass('selected');
+    var submenu = menu.find('.inner-content .sub-nav li').first();
+    if ($.type(sub) === 'string') {
+      sub = pureClassName(sub);
+      submenu = menu.find('.inner-content .sub-nav li.'+sub);
+    } else {
+      sub = submenu.attr('class').split('.')[0];
+    }
+    $('.inner-content .sub-nav li').removeClass('selected');
+    submenu.addClass('selected');
+    activeBackground(sub);
+    toggleProjectContent(data, main, sub);
+    // slide up all other expanded menu
+    $('.header .nav>li').not('.selected').find('.inner-content').slideUp();
+  }
+
+  function activeBackground(sub) {
+    sub = pureClassName(sub);
+    var backgrounds = $('.background-slider.'+sub+' .background');
+    $('.background-slider .background').removeClass('active');
+    backgrounds.first().addClass('active');
+  }
+
+  function toggleProjectContent(data, main, sub) {
+    $.each(data.menus, function(i, value) {
+      if(pureClassName(value.name) === main) {
+        $.each(value.menus, function(i, value) {
+          if(pureClassName(value.name) === sub) {
+            var menu = $('.header .nav .'+main);
+            menu.find('.project-description').css(value.box).find('.content').text(value.description);
+          }
+        });
+        sub = pureClassName(sub);
+        $('body').removeClass();
+        $('body').addClass(sub);
+        resetPager(main, sub);
+      }
+    });
+  }
+
   function setPager(data, main, sub, backgroundController) {
-    sub = sub.replace(/[& \.]/, '-');
+    sub = pureClassName(sub);
     $.each(data.menus, function(i, value) {
       if(value.name === main) {
         var menu = $('.header .nav .'+main);
@@ -206,29 +238,26 @@
     });
   }
 
-  function resetPager(main) {
+  function resetPager(main, sub) {
+    sub = pureClassName(sub);
+    var backgrounds = $('.background-slider.'+sub).find('.background');
     var menu = $('.header .nav .'+main);
     var next = menu.find('.project-pager a.next');
     var previous = menu.find('.project-pager a.previous');
-    next.removeClass('disabled');
     previous.addClass('disabled');
+    if (backgrounds.length > 1) {
+      next.removeClass('disabled');
+    } else {
+      next.addClass('disabled');
+    }
   }
 
-  function activeProjectContents(data, main, sub, backgroundController) {
-    $.each(data.menus, function(i, value) {
-      if(value.name === main) {
-        $.each(value.menus, function(i, value) {
-          if(value.name === sub) {
-            var menu = $('.header .nav .'+main);
-            menu.find('.project-description').css(value.box).find('.content').text(value.description);
-          }
-        });
-        sub = sub.replace(/[& \.]/, '-');
-        $('body').removeClass();
-        $('body').addClass(sub);
-        backgroundController.activeSubject(sub);
-        resetPager(main);
-      }
+  function bindExpandButton() {
+    $('.header .nav .expand-button').click(function(ev) {
+      ev.preventDefault();
+      var self = $(this);
+      self.toggleClass('minimized');
+      self.parent().find('.project-description .content').slideToggle();
     });
   }
 })();
