@@ -181,6 +181,9 @@ html.project .content-container .footer {
 .transparent-box {
   background: rgba(255, 255, 255, 0.3);
 }
+.nav .sub-nav.transparent-box {
+ background: rgba(182, 182, 182, 0.8); 
+}
 /*.transparent-box.ie-fix {
   background-color: #ffff;
   filter: alpha(opacity=30);
@@ -201,6 +204,7 @@ html.project .content-container .footer {
   display: block;
   min-width: 100%;
   margin: 0;
+  margin-top: 2px;
   padding: 4px 0;
 }
 .nav .sub-nav li {
@@ -305,7 +309,8 @@ html.project .content-container .footer {
 .project-pager a img  {
   vertical-align: middle;
 }
-.project-bonus .facebook {
+.project-bonus .facebook,
+.project-bonus .linkedin {
   margin-right: 10px;
 }
 .project-pager {
