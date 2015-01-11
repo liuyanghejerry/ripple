@@ -168,16 +168,14 @@ html.index .content-container {
   font-weight: bolder;
   text-decoration: underline;
 }
-.content-container .footer {
-  margin: 0 4px 4px 0;
-  color: #fff;
-  text-align: right;
+
+html.info .footer, 
+html.project .footer {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-html.project .content-container .footer {
-  position: fixed;
+  margin: 0 4px 4px 0;
+  color: #fff;
 }
 
 .upper {
@@ -187,7 +185,7 @@ html.project .content-container .footer {
   background: rgba(255, 255, 255, 0.3);
 }
 .nav .sub-nav.transparent-box {
- background: rgba(182, 182, 182, 0.8); 
+ background: rgba(255, 255, 255, 0.75); 
 }
 /*.transparent-box.ie-fix {
   background-color: #ffff;
@@ -207,7 +205,7 @@ html.project .content-container .footer {
 }
 .nav .sub-nav {
   display: block;
-  min-width: 100%;
+  min-width: 92px;
   margin: 0;
   margin-top: 2px;
   padding: 4px 0;
