@@ -13,7 +13,6 @@
 
 body {
   font-family: 'Calibri-Light';
-  font-size: 70%;
 }
 .background-slider {
   width: 100%;
@@ -92,7 +91,7 @@ html.index .content-container {
   pointer-events: all;
 }
 .header .nav li a {
-  font-size: 1.5em;
+  font-size: 1.05em;
 }
 
 .main-content {
@@ -114,7 +113,7 @@ html.index .content-container {
   width: 100%;
   height: 50%;
   margin: auto;
-  font-size: 2.2em;
+  font-size: 1.54em;
 }
 .main-content .content-wrapper .link-wrapper {
   position: absolute;
@@ -152,12 +151,12 @@ html.index .content-container {
 }
 .story-container h2 {
   margin: 20px 0 0 0;
-  font-size: 2.2em;
+  font-size: 1.54em;
   font-weight: normal;
 }
 .story-container p {
   max-width: 600px;
-  font-size: 1.3em;
+  font-size: 0.91em;
 }
 .story-container .bold-title {
   margin: 0;
@@ -282,7 +281,7 @@ html.project .footer {
   position: absolute;
   width: 505px;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.05em;
 }
 .project-description .content {
   margin: 0;
