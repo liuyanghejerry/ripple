@@ -8,6 +8,7 @@
 
     if($('html.info').length) {
       var f = attachBackground();
+      adjustFooter();
       setInterval(function(){f.nextBackground();}, 5000);
       loadProjects().done(function(data) {
         buildSimpleMenu(data);
@@ -253,6 +254,7 @@
         resetPager(main, sub);
       }
     });
+    adjustFooter();
   }
 
   function setPager(data, main, sub, backgroundController) {
@@ -316,6 +318,21 @@
       var self = $(this);
       self.toggleClass('minimized');
       self.parent().find('.project-description .content').slideToggle();
+      adjustFooter();
     });
+  }
+
+  function adjustFooter() {
+    setTimeout(function() {
+      $('.footer').css('display', 'none');
+      if ($(document).height() > $(window).height()) {
+        $('.footer').css('position', 'absolute');
+        $('.footer').css('top', $(document).height() - $('.footer span').height());
+      } else {
+        $('.footer').css('position', 'fixed');
+        $('.footer').css('top', 'auto');
+      }
+      $('.footer').css('display', 'block');
+    }, 800);
   }
 })();
